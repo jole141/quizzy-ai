@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "3e4ebc01-57b7-4989-a9e6-96eee1742b57",
+		"name": "digobraz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create new quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"drugi kviz\",\r\n\"description\": \"test desc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/quiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add questions to quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n\"quiz_id\": 2,\r\n\"question_text\": \"Tko je Joža\",\r\n\"answer_a\": \"kobilinac\",\r\n\"answer_b\": \"mraclinca\",\r\n\"answer_c\": \"kucan\",\r\n\"answer_d\": \"lomnican\",\r\n\"quiz_order_number\": 1,\r\n\"correct_answer\": \"a\"\r\n},\r\n{\r\n\"quiz_id\": 2,\r\n\"question_text\": \"Tko je Jozo bozo\",\r\n\"answer_a\": \"tesar\",\r\n\"answer_b\": \"tokar\",\r\n\"answer_c\": \"magician\",\r\n\"answer_d\": \"tetak\",\r\n\"quiz_order_number\": 2,\r\n\"correct_answer\": \"c\"\r\n},\r\n{\r\n\"quiz_id\": 2,\r\n\"question_text\": \"Tko je Jozica\",\r\n\"answer_a\": \"pas\",\r\n\"answer_b\": \"auto\",\r\n\"answer_c\": \"macka\",\r\n\"answer_d\": \"ništa od navedenog\",\r\n\"quiz_order_number\": 3,\r\n\"correct_answer\": \"d\"\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/2/add-questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"2",
+						"add-questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check quiz answers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n\"quiz_order_number\": 1,\r\n\"answer\": \"a\"\r\n},\r\n{\r\n\"quiz_order_number\": 2,\r\n\"answer\": \"a\"\r\n},\r\n{\r\n\"quiz_order_number\": 3,\r\n\"answer\": \"a\"\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/2/check-answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"2",
+						"check-answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update quiz",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n\"title\": \"izmjena drugog kviza\",\r\n\"description\": \"test desc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get quizzes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get quiz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
